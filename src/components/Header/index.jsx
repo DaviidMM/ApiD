@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import myPic from "@/../public/images/GitHub-Mark-Light-32px.png";
+import myPic from "@/../images/GitHub-Mark-Light-32px.png";
 
 export default function Header() {
   return (
@@ -12,6 +12,8 @@ export default function Header() {
       <a
         href="https://github.com/DaviidMM"
         className="transition-all brightness-75 hover:brightness-150"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <img src={myPic} alt="Github link" />
       </a>

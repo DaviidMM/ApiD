@@ -10,20 +10,17 @@ export default function Card({ description, image, apiUrl, title, url }) {
   useEffect(() => {
     console.log("useEffect");
     // Set api status
-    setTimeout(() => {
-      fetch(apiUrl).then((res) => {
-        console.log(res);
-        if (res.status === 200) {
-          setStatus(apiStates.success);
-        } else {
-          setStatus(apiStates.error);
-        }
-      });
-    }, 5000);
+    fetch(apiUrl).then((res) => {
+      if (res.status === 200) {
+        setStatus(apiStates.success);
+      } else {
+        setStatus(apiStates.error);
+      }
+    });
   }, []);
 
   return (
-    <div className="flex flex-row overflow-hidden transition-all bg-gray-900 border rounded-lg md:max-w-lg md:flex-col text-slate-400 border-slate-400 hover:translate-y-[-6px]">
+    <div className="flex flex-row overflow-hidden transition-all bg-gray-900 border rounded-lg md:max-w-lg md:flex-col text-slate-400 border-slate-400">
       <div className="hidden h-full md:block lg:h-36 card-image">
         <Link href={url} className="relative block group">
           <img
