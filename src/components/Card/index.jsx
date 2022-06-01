@@ -4,13 +4,13 @@ import CardStatus from "./cardStatus";
 import { LinkIcon, ExternalLinkIcon } from "@heroicons/react/outline";
 import { Link } from "wouter";
 
-export default function Card({ description, image, apiUrl, title, url }) {
+export default function Card({ description, id, image, url, title }) {
   const [status, setStatus] = useState(apiStates.loading);
 
   useEffect(() => {
     console.log("useEffect");
     // Set api status
-    fetch(apiUrl).then((res) => {
+    fetch(url).then((res) => {
       if (res.status === 200) {
         setStatus(apiStates.success);
       } else {
@@ -22,7 +22,7 @@ export default function Card({ description, image, apiUrl, title, url }) {
   return (
     <div className="flex flex-row overflow-hidden transition-all bg-gray-900 border rounded-lg md:max-w-lg md:flex-col text-slate-400 border-slate-400">
       <div className="hidden h-full md:block lg:h-36 card-image">
-        <Link href={url} className="relative block group">
+        <Link href={`/api/${id}`} className="relative block group">
           <img
             src={`images/${image}`}
             alt="Auvasa Image"
@@ -40,7 +40,7 @@ export default function Card({ description, image, apiUrl, title, url }) {
             <h3 className="ml-3 text-3xl font-bold">{title}</h3>
           </div>
           <a
-            href={apiUrl}
+            href={url}
             className="flex items-center p-2 transition border rounded-lg border-slate-400 hover:border-white text-slate-400 hover:text-white"
             target="_blank"
             rel="noopener noreferrer"
@@ -50,7 +50,7 @@ export default function Card({ description, image, apiUrl, title, url }) {
           </a>
         </div>
         <Link
-          href={url}
+          href={`/api/${id}`}
           className="flex p-2 text-sm border rounded-lg w-fit border-slate-400 md:text-base hover:text-white hover:border-white"
         >
           <LinkIcon className="inline w-5 h-5 mr-2" />
