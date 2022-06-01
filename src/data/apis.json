@@ -1,0 +1,9 @@
+[
+  {
+    "id": "auvasa",
+    "title": "API Auvasa",
+    "description": "Descripción de la API de AUVASA",
+    "image": "auvasa.jpg",
+    "url": "https://api-auvasa.vercel.app"
+  }
+]
