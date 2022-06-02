@@ -1,5 +1,4 @@
 import { Link } from "wouter";
-import myPic from "@/../images/GitHub-Mark-Light-32px.png";
 
 export default function Header() {
   return (
@@ -15,7 +14,7 @@ export default function Header() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={myPic} alt="Github link" />
+        <img src={`/images/GitHub-Mark-Light-32px.png`} alt="Github link" />
       </a>
     </div>
   );
