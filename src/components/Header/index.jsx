@@ -7,7 +7,7 @@ export default function Header() {
       <div className="h-full">
         <Link to="/" className="flex flex-row items-end h-full py-4">
           <Logo className="w-12 h-12" />
-          <h1 className="text-5xl">pify</h1>
+          <h1 className="text-5xl">pid</h1>
         </Link>
       </div>
       <a
