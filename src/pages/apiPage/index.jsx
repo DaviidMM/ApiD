@@ -25,6 +25,7 @@ export default function ApiPage({ params: { apiId } }) {
       <br />
       <br />
       <br />
+      <br />
       Añade un número de parada y línea a la URL para continuar.
       <br />
       Sintaxis: {url}/Nº parada/Línea.
